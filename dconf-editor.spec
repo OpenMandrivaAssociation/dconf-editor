@@ -1,5 +1,5 @@
 Name:           dconf-editor
-Version:        3.16.1
+Version:        3.18.2
 Release:        2
 Summary:        Configuration editor for dconf
 Group:		System/Libraries

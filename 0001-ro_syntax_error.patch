@@ -1,0 +1,23 @@
+From c2fc3b75749aa7a4ec4e13fbf8abbeb8166646cf Mon Sep 17 00:00:00 2001
+From: Kalev Lember <klember@redhat.com>
+Date: Fri, 13 Nov 2015 13:16:29 +0100
+Subject: [PATCH] Fix a syntax error in desktop file keywords Romanian
+ translation
+
+---
+ po/ro.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/po/ro.po b/po/ro.po
+index 9ddcb2b..e0d6070 100644
+--- a/po/ro.po
++++ b/po/ro.po
+@@ -35,7 +35,7 @@ msgstr ""
+ 
+ #: ../editor/ca.desrt.dconf-editor.desktop.in.in.h:3
+ msgid "settings;configuration;"
+-msgstr "settings;configuration;configurări;configurație;setări"
++msgstr "settings;configuration;configurări;configurație;setări;"
+ 
+ #: ../editor/ca.desrt.dconf-editor.gschema.xml.h:1
+ msgid "The width of the window"

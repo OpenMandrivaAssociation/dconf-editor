@@ -12,10 +12,13 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
 BuildRequires:  pkgconfig(dconf)
 BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  vala
+BuildRequires:	meson
 
 %description
 Graphical tool for editing the dconf configuration database.
@@ -25,14 +28,20 @@ Graphical tool for editing the dconf configuration database.
 %apply_patches
 
 %build
-%configure
-%make
-%install
-%make_install
+%meson -Denable-gtk-doc=true
+%meson_build
 
-%find_lang dconf
+%install
+%meson_install
+#we need this beacuse ibus and gdm installs file there
+install -d %{buildroot}%{_sysconfdir}/dconf/db
+install -d %{buildroot}%{_sysconfdir}/dconf/profile
+
+%find_lang dconf-editor
 
 %check
+%meson_test
+
 appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_datadir}/appdata/ca.desrt.dconf-editor.appdata.xml
 desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/ca.desrt.dconf-editor.desktop
 

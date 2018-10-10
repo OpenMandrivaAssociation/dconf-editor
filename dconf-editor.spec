@@ -6,7 +6,7 @@ Group:		System/Libraries
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/dconf
 Source0:        https://download.gnome.org/sources/dconf-editor/3.16/dconf-editor-%{version}.tar.xz
-Patch1:		0001-ro_syntax_error.patch
+#Patch1:		0001-ro_syntax_error.patch
 BuildRequires:  appstream-util
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool

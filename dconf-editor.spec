@@ -1,6 +1,6 @@
 Name:           dconf-editor
 Version:        3.18.2
-Release:        2
+Release:        3
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+

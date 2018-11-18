@@ -1,4 +1,5 @@
 removed_sources:
   dconf-editor-3.16.1.tar.xz: a5d877858a8c66f0d7a627db8498ac767821e4fa
-sources:
   dconf-editor-3.18.2.tar.xz: 667faa73ced36fc51774498f8d87b0052338764d
+sources:
+  dconf-editor-3.30.2.tar.xz: 888a6adc6ae170021d0b4fa1daeb915020b9f103

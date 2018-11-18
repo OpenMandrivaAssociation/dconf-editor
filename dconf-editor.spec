@@ -18,14 +18,23 @@ BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  vala
+BuildRequires:	vala-devel
+BuildRequires:	gtk-doc
 BuildRequires:	meson
+
+Requires:	dbus
+Requires:	dconf
 
 %description
 Graphical tool for editing the dconf configuration database.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
+
+# fix invalid-desktopfile:
+# missing semicolon (';') as trailing character for locale string list key "Keywords[ro]"
+sed -i -e 's|configurări;configurație;setări"|configurări;configurație;setări;"|' po/ro.po
 
 %build
 %meson -Denable-gtk-doc=true
@@ -42,30 +51,12 @@ install -d %{buildroot}%{_sysconfdir}/dconf/profile
 %check
 %meson_test
 
-appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_datadir}/appdata/ca.desrt.dconf-editor.appdata.xml
-desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/ca.desrt.dconf-editor.desktop
-
-%post
-touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-
-%postun
-if [ $1 -eq 0 ] ; then
-    touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-    gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-    glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
-fi
-
-%posttrans
-gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
-
-%files -f dconf.lang
-%doc COPYING
+%files -f dconf-editor.lang
 %{_bindir}/dconf-editor
-%{_datadir}/appdata/ca.desrt.dconf-editor.appdata.xml
-%{_datadir}/applications/ca.desrt.dconf-editor.desktop
-%{_datadir}/dbus-1/services/ca.desrt.dconf-editor.service
-%{_datadir}/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
-%{_datadir}/icons/hicolor/*/apps/dconf-editor.png
-%{_datadir}/icons/hicolor/scalable/apps/dconf-editor-symbolic.svg
-%{_mandir}/man1/dconf-editor.1*
+%{_mandir}/man1/dconf-editor.*
+%{_datadir}/applications/%{busname}.desktop
+%{_datadir}/bash-completion/completions/dconf-editor
+%{_iconsdir}/hicolor/*/apps/*dconf-editor*.*
+%{_datadir}/metainfo/%{busname}.appdata.xml
+%{_datadir}/dbus-1/services/%{busname}.service
+%{_datadir}/glib-2.0/schemas/%{busname}.gschema.xml

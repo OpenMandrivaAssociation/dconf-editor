@@ -1,3 +1,13 @@
+%define api		1
+%define dbusmajor	0
+%define major		1
+%define libname		%mklibname %{name} %{major}
+%define libdbus		%mklibname %{name}-dbus %{api} %{dbusmajor}
+%define develname	%mklibname -d %{name}
+%define giolibname	%mklibname gio 2.0 0
+
+%define busname		ca.desrt.dconf-editor
+
 Name:           dconf-editor
 Version:        3.30.2
 Release:        1

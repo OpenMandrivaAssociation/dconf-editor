@@ -9,7 +9,7 @@
 %define busname		ca.desrt.dconf-editor
 
 Name:           dconf-editor
-Version:        3.30.2
+Version:        3.32.0
 Release:        1
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  vala
 BuildRequires:	vala-devel
@@ -66,7 +67,7 @@ install -d %{buildroot}%{_sysconfdir}/dconf/profile
 %{_mandir}/man1/dconf-editor.*
 %{_datadir}/applications/%{busname}.desktop
 %{_datadir}/bash-completion/completions/dconf-editor
-%{_iconsdir}/hicolor/*/apps/*dconf-editor*.*
+%{_iconsdir}/hicolor/*/*/*dconf-editor*.*
 %{_datadir}/metainfo/%{busname}.appdata.xml
 %{_datadir}/dbus-1/services/%{busname}.service
 %{_datadir}/glib-2.0/schemas/%{busname}.gschema.xml

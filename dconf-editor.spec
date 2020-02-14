@@ -9,7 +9,7 @@
 %define busname		ca.desrt.dconf-editor
 
 Name:           dconf-editor
-Version:        3.34.3
+Version:        3.34.4
 Release:        1
 Summary:        Configuration editor for dconf
 Group:		System/Libraries

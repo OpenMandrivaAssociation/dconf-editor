@@ -9,14 +9,13 @@
 %define busname		ca.desrt.dconf-editor
 
 Name:           dconf-editor
-Version:        3.34.4
+Version:        3.36.0
 Release:        1
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/dconf
-Source0:        https://download.gnome.org/sources/dconf-editor/3.16/dconf-editor-%{version}.tar.xz
-#Patch1:		0001-ro_syntax_error.patch
+Source0:        https://download.gnome.org/sources/dconf-editor/3.36/dconf-editor-%{version}.tar.xz
 BuildRequires:  appstream-util
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool

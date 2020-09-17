@@ -1,3 +1,5 @@
+%define url_ver %(echo %{version} | cut -d. -f1,2)
+
 %define api		1
 %define dbusmajor	0
 %define major		1
@@ -9,13 +11,13 @@
 %define busname		ca.desrt.dconf-editor
 
 Name:           dconf-editor
-Version:        3.36.4
+Version:        3.38.0
 Release:        1
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/dconf
-Source0:        https://download.gnome.org/sources/dconf-editor/3.36/dconf-editor-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/dconf-editor/%{url_ver}//dconf-editor-%{version}.tar.xz
 BuildRequires:  appstream-util
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool

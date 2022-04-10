@@ -12,7 +12,7 @@
 
 Name:           dconf-editor
 Version:        3.38.3
-Release:        2
+Release:        3
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+
@@ -49,7 +49,7 @@ Graphical tool for editing the dconf configuration database.
 sed -i -e 's|configurări;configurație;setări"|configurări;configurație;setări;"|' po/ro.po
 
 %build
-%meson -Denable-gtk-doc=true
+%meson
 %meson_build
 
 %install

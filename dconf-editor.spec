@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
+BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  vala
 BuildRequires:	vala-devel

@@ -18,8 +18,7 @@ Group:		System/Libraries
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/dconf
 Source0:        https://download.gnome.org/sources/dconf-editor/%{url_ver}//dconf-editor-%{version}.tar.xz
-# Upstream, build fix with meson 0.60+
-Patch0:         https://gitlab.gnome.org/GNOME/dconf-editor/-/merge_requests/21.patch
+
 BuildRequires:  appstream-util
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool

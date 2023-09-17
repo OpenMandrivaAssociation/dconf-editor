@@ -1,3 +1,4 @@
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 %define api		1

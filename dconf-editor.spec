@@ -12,8 +12,8 @@
 %define busname		ca.desrt.dconf-editor
 
 Name:           dconf-editor
-Version:        43.0
-Release:        4
+Version:        45.0
+Release:        1
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+

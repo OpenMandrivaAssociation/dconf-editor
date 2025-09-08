@@ -72,6 +72,6 @@ install -d %{buildroot}%{_sysconfdir}/dconf/profile
 %{_datadir}/applications/%{busname}.desktop
 %{_datadir}/bash-completion/completions/dconf-editor
 %{_iconsdir}/hicolor/*/*/*dconf-editor*.*
-%{_datadir}/metainfo/%{busname}.appdata.xml
+%{_datadir}/metainfo/%{busname}.metainfo.xml
 %{_datadir}/dbus-1/services/%{busname}.service
 %{_datadir}/glib-2.0/schemas/%{busname}.gschema.xml

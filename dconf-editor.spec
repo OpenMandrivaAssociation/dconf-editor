@@ -13,7 +13,7 @@
 
 Name:           dconf-editor
 Version:        49.0
-Release:        1
+Release:        2
 Summary:        Configuration editor for dconf
 Group:		System/Libraries
 License:        LGPLv2+
@@ -31,7 +31,7 @@ BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
 BuildRequires:  pkgconfig(libhandy-1)
-BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(libxml-2.0) >= 2.15.2
 BuildRequires:  vala
 BuildRequires:	vala-devel
 BuildRequires:	gtk-doc
